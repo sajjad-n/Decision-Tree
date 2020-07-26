@@ -161,7 +161,7 @@ def split(data):
             else:
                 value = values[i]
                 node = Node(headers[feature] + ' == ' + str(value), feature, value, [], [], None, None, False, None)
-
+ 
             node.true_child_data, node.false_child_data = find_child(data, feature, value, is_digit)
             print('condition:', node.condition, '\nn_true_child:', len(node.true_child_data), '\nn_false_child:', len(node.false_child_data))
             information_gain = gain(parent_entropy, node.true_child_data, node.false_child_data)
